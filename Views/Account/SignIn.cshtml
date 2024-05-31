@@ -1,0 +1,36 @@
+﻿@model DWD_CW_Final.Models.Admin
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/Front/_Layout.cshtml";
+}
+
+
+<section class="my_account_area pt--30 pb--55 bg--white">
+    <div class="container">
+        <div class="row">
+            <!-- Admin Sign In Section -->
+            <div class="offset-lg-3 col-lg-6 col-12">
+                <div class="my__account__wrapper">
+                    <h3 class="account__title text-center">Admin Sign In</h3>
+                    <form asp-action="SignIn" method="post">
+                        <div class="form-group">
+                            <label asp-for="Username" class="control-label"></label>
+                            <input asp-for="Username" class="form-control" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Sign In" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

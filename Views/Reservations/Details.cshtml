@@ -1,0 +1,56 @@
+﻿@model DWD_CW_Final.Models.Reservation
+
+@{
+    ViewData["Title"] = "Manage Reservations";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+
+<h1>Reservation Details</h1>
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Guest
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Guest.Name
+        </dd>
+        <dt class="col-sm-2">
+            Book
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Book?.Title
+        </dd>
+        <dt class="col-sm-2">
+            Reservation Date
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ReservationDate
+        </dd>
+        <dt class="col-sm-2">
+            Issue Date
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IssueDate
+        </dd>
+        <dt class="col-sm-2">
+            Return Date
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ReturnDate
+        </dd>
+        <dt class="col-sm-2">
+            Status
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Status
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReservationID" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

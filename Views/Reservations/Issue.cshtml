@@ -1,0 +1,60 @@
+﻿@model DWD_CW_Final.Models.IssueReservationViewModel
+
+@{
+    ViewData["Title"] = "Manage Reservations";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+
+<h1>Issue a Book/CD</h1>
+
+<form asp-action="Issue" method="post">
+    <input type="hidden" asp-for="ReservationID" />
+    <input type="hidden" asp-for="GuestID" />
+    <input type="hidden" asp-for="BookID" />
+    <input type="hidden" asp-for="CDID" />
+
+    <div class="form-group">
+        <label asp-for="GuestID" class="control-label"></label>
+        <select asp-for="GuestID" class="form-control" asp-items="ViewBag.Guests" disabled></select>
+        <span asp-validation-for="GuestID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookID" class="control-label"></label>
+        <select asp-for="BookID" class="form-control" asp-items="ViewBag.Books" disabled></select>
+        <span asp-validation-for="BookID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CDID" class="control-label"></label>
+        <select asp-for="CDID" class="form-control" asp-items="ViewBag.CDs" disabled></select>
+        <span asp-validation-for="CDID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReservationDate" class="control-label"></label>
+        <input asp-for="ReservationDate" class="form-control" disabled />
+        <span asp-validation-for="ReservationDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IssueDate" class="control-label"></label>
+        <input asp-for="IssueDate" class="form-control" />
+        <span asp-validation-for="IssueDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReturnDate" class="control-label"></label>
+        <input asp-for="ReturnDate" class="form-control" />
+        <span asp-validation-for="ReturnDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label"></label>
+        <select asp-for="Status" class="form-control">
+            <option value="Reserved">Reserved</option>
+            <option value="Issued">Issued</option>
+            <option value="Returned">Returned</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Issue" class="btn btn-primary" />
+    </div>
+</form>

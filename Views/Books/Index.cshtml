@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DWD_CW_Final.Models.Book>
+
+@{
+    ViewData["Title"] = "Manage Books";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+
+<p>
+    <a href="@Url.Action("Add", "Books")" class="btn btn-primary">Go to Books</a>
+</p>
+
+<h1>Books</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Available</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@(book.Available ? "Yes" : "No")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@book.BookID" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@book.BookID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+﻿@model DWD_CW_Final.Models.CreateGuestWithMessageVm
+
+@{
+    ViewData["Title"] = "Leave a Message";
+    Layout = "~/Views/Shared/Front/_Layout.cshtml";
+}
+
+<section class="my_account_area pt--30 pb--55 bg--white">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6 col-12">
+                <div class="my__account__wrapper">
+                    <h3 class="account__title text-center">Leave a Message</h3>
+                    <form asp-action="LeaveMessage" method="POST">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="account__form">
+                            <div class="input__box">
+                                <label>Name <span>*</span></label>
+                                <input asp-for="Guest.Name" class="form-control">
+                                <span asp-validation-for="Guest.Name" class="text-danger"></span>
+                            </div>
+                            <div class="input__box">
+                                <label>Email Address <span>*</span></label>
+                                <input asp-for="Guest.Email" class="form-control">
+                                <span asp-validation-for="Guest.Email" class="text-danger"></span>
+                            </div>
+                            <div class="input__box">
+                                <label>Message <span>*</span></label>
+                                <textarea asp-for="Message.MessageText" class="form-control"></textarea>
+                                <span asp-validation-for="Message.MessageText" class="text-danger"></span>
+                            </div>
+                            @*
+                            <div class="input__box">
+                                <label>Message Date <span>*</span></label>
+                                <input type="date" asp-for="Message.MessageDate" class="form-control">
+                                <span asp-validation-for="Message.MessageDate" class="text-danger"></span>
+                            </div>*@
+                            <div class="form__btn mt--30">
+                                <button type="submit" style="width: 100%;">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

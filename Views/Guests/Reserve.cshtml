@@ -1,0 +1,24 @@
+﻿@model DWD_CW_Final.Models.Reservation
+
+<h1>Reserve a Book or CD</h1>
+
+<form asp-action="Reserve" method="post">
+    <div class="form-group">
+        <label asp-for="GuestID" class="control-label"></label>
+        <input asp-for="GuestID" class="form-control" />
+        <span asp-validation-for="GuestID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BookID" class="control-label"></label>
+        <input asp-for="BookID" class="form-control" />
+        <span asp-validation-for="BookID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CDID" class="control-label"></label>
+        <input asp-for="CDID" class="form-control" />
+        <span asp-validation-for="CDID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Reserve" class="btn btn-primary" />
+    </div>
+</form>

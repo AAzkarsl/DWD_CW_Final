@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DWD_CW_Final.Models.Book>
+
+<h1>Search Books</h1>
+
+<form asp-action="Search" method="get">
+    <div class="form-group">
+        <input type="text" name="query" class="form-control" placeholder="Search for books" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@(book.Available ? "Yes" : "No")</td>
+            </tr>
+        }
+    </tbody>
+</table>

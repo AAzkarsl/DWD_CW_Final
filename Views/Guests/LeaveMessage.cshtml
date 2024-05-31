@@ -1,0 +1,19 @@
+﻿@model DWD_CW_Final.Models.Message
+
+<h1>Leave a Message</h1>
+
+<form asp-action="LeaveMessage" method="post">
+    <div class="form-group">
+        <label asp-for="GuestID" class="control-label"></label>
+        <input asp-for="GuestID" class="form-control" />
+        <span asp-validation-for="GuestID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MessageText" class="control-label"></label>
+        <textarea asp-for="MessageText" class="form-control"></textarea>
+        <span asp-validation-for="MessageText" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Leave Message" class="btn btn-primary" />
+    </div>
+</form>

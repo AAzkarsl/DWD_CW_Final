@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DWD_CW_Final.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Manage Reservations";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+
+<h1>Reservations</h1>
+
+<p>
+    <a href="@Url.Action("Reserve", "Reservations")" class="btn btn-primary">Add Reservation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Guest</th>
+            <th>Book/CD</th>
+            <th>Reservation Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservation in Model)
+        {
+            <tr>
+                <td>@reservation.Guest.Name</td>
+                <td>@reservation.Book?.Title</td>
+                <td>@reservation.ReservationDate</td>
+                <td>@reservation.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@reservation.ReservationID" class="btn btn-warning">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@reservation.ReservationID" class="btn btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@reservation.ReservationID" class="btn btn-danger">Delete</a>
+                    <a asp-action="Issue" asp-route-id="@reservation.ReservationID" class="btn btn-primary">Issue</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

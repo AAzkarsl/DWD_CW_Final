@@ -1,0 +1,39 @@
+﻿@model DWD_CW_Final.Models.Book
+
+@{
+    ViewData["Title"] = "Edit Book";
+    Layout = "~/Views/Shared/Admin/_Layout.cshtml";
+}
+
+
+<h1>Edit Book</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="BookID" />
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author" class="control-label"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ISBN" class="control-label"></label>
+        <input asp-for="ISBN" class="form-control" />
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Available" class="control-label"></label>
+        <select asp-for="Available" class="form-control">
+            <option value="true">Available</option>
+            <option value="false">Lended</option>
+        </select>
+        <span asp-validation-for="Available" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>

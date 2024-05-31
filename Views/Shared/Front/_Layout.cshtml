@@ -1,0 +1,73 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Sydenham Library</title>
+	<link rel="shortcut icon" href="~/ebook.lk.ico">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
+	<link rel="stylesheet" href="~/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/css/plugins.css">
+	<link rel="stylesheet" href="~/style.css">
+
+
+   <link rel="stylesheet" href="~/css/custom.css">
+	    <style>
+        body::-webkit-scrollbar {
+        width: 3px;
+        }
+
+        body::-webkit-scrollbar-track {
+        background: #f6f6f6;
+        }
+
+        body::-webkit-scrollbar-thumb {
+        background-color: #2f5a85;
+        border-radius: 10px; 
+        @* border: 1px solid #fff; *@
+        }
+    </style>
+
+	<script src="~/js/vendor/modernizr-3.5.0.min.js"></script>
+
+
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <partial name="~/Views/Shared/Front/Header.cshtml" />
+        @RenderBody()
+
+        <!-- Footer Area -->
+		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+			<div class="copyright__wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="copyright">
+								<div class="copy__right__inner text-left">
+									<p>CW By M S A Azkar</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- //Footer Area -->
+    </div>
+
+	<script src="~/js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="~/js/popper.min.js"></script>
+	<script src="~/js/bootstrap.min.js"></script>
+	<script src="~/js/plugins.js"></script>
+	<script src="~/js/active.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

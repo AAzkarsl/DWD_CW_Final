@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DWD_CW_Final.props" />
+</Project>
